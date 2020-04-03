@@ -33,4 +33,38 @@ describe('Meme routes', () => {
       });
   });
 
+  it('gets a specific meme', async() => {
+    const meme = await getMeme();
+
+    return request(app)
+      .get(`/api/v1/memes/${meme._id}`)
+      .then(res => {
+        expect(res.body).toEqual(meme);
+      });
+  });
+
+  it('updates a meme', async() => {
+    const meme = await getMeme();
+
+    return request(app)
+      .put(`/api/v1/memes/${meme._id}`)
+      .send({ bottom: 'lorem ipsum dolor' })
+      .then(res => {
+        expect(res.body).toEqual({
+          ...meme,
+          bottom: 'lorem ipsum dolor'
+        });
+      });
+  });
+
+  it('deletes a meme', async() => {
+    const meme = await getMeme();
+
+    return request(app)
+      .delete(`/api/v1/memes/${meme._id}`)
+      .then(res => {
+        expect(res.body).toEqual(meme);
+      });
+  });
+
 });
