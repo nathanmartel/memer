@@ -15,15 +15,15 @@ module.exports = async() => {
   });
 
   await Meme.create({
-    top: 'Today',
-    image: 'https://i.kym-cdn.com/photos/images/newsfeed/001/490/350/9a3.jpg',
-    bottom: 'at Alchemy'
+    top: 'Trapped in the',
+    image: 'https://i.imgflip.com/105fef.jpg',
+    bottom: 'Meowtrix'
   });
 
   await Meme.create({
-    top: 'Huh??',
-    image: 'https://i.kym-cdn.com/photos/images/newsfeed/001/488/512/a52.jpg',
-    bottom: '?????'
+    top: 'Countin\' my',
+    image: 'https://quoteswell.com/wp-content/uploads/2017/09/436-min.jpg',
+    bottom: 'Benjameowns'
   });
 
 };
